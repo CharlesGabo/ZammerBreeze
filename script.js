@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
         // Toggle icon between hamburger and close (simple text change for now, could be icon)
         menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
     });
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
             menuToggle.textContent = '☰';
         });
     });
